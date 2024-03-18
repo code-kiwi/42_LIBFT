@@ -6,7 +6,7 @@
 #    By: mhotting <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/06 14:28:05 by mhotting          #+#    #+#              #
-#    Updated: 2024/02/18 16:24:51 by mhotting         ###   ########.fr        #
+#    Updated: 2024/03/18 12:25:30 by mhotting         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,19 +22,29 @@ HEADERS			=	$(addprefix $(HEADERS_DIR), $(HEADERS_FILES))
 
 # STRING
 STRING_DIR		=	string/
-STRING_FILES	=	ft_atoi.c ft_isalnum.c ft_isalpha.c ft_isascii.c			\
-					ft_isspace.c ft_isdigit.c ft_isprint.c ft_itoa.c			\
-					ft_putchar_fd.c	ft_putendl_fd.c	ft_putnbr_fd.c				\
-					ft_putstr_fd.c ft_split.c ft_strchr.c ft_strdup.c			\
-					ft_striteri.c ft_strjoin.c ft_strlcat.c ft_strlcpy.c		\
-					ft_strlen.c ft_strmapi.c ft_strncmp.c ft_strnstr.c			\
-					ft_strrchr.c ft_strtrim.c ft_substr.c ft_tolower.c			\
-					ft_toupper.c ft_ctoa.c ft_get_long_len.c ft_ltoa.c			\
-					ft_ltoa_base.c ft_get_ulong_len.c ft_ultoa_base.c			\
-					ft_is_valid_base.c ft_atol.c ft_atoul.c ft_prepend_chars.c	\
+STRING_FILES	=	ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isspace.c			\
+					ft_isdigit.c ft_isprint.c ft_split.c ft_strchr.c			\
+					ft_strdup.c ft_striteri.c ft_strjoin.c ft_strlcat.c			\
+					ft_strlcpy.c ft_strlen.c ft_strmapi.c ft_strncmp.c			\
+					ft_strnstr.c ft_strrchr.c ft_strtrim.c ft_substr.c			\
+					ft_tolower.c ft_toupper.c ft_prepend_chars.c				\
 					ft_append_chars.c ft_strcmp.c ft_free_str_array.c			\
-					ft_strtok.c ft_count_words.c
+					ft_strtok.c ft_count_words.c ft_strstr.c
 STRING			=	$(addprefix $(STRING_DIR), $(STRING_FILES))
+
+# INPUT/OUTPUT
+IO_DIR			=	io/
+IO_FILES		=	ft_putchar_fd.c ft_putendl_fd.c ft_putnbr_fd.c				\
+					ft_putstr_fd.c
+IO				=	$(addprefix $(IO_DIR), $(IO_FILES))
+
+# CONVERSION
+CONV_DIR		=	conversion/
+CONV_FILES		=	ft_atoi.c ft_itoa.c ft_ctoa.c ft_ltoa.c ft_ltoa_base.c		\
+					ft_ultoa_base.c ft_is_valid_base.c ft_get_long_len.c		\
+					ft_get_ulong_len.c ft_atol.c ft_atoul.c
+CONV			=	$(addprefix $(CONV_DIR), $(CONV_FILES))
+
 
 # MEMORY
 MEMORY_DIR		=	memory/
@@ -70,7 +80,8 @@ GNL				=	$(addprefix $(GNL_DIR), $(GNL_FILES))
 
 # SOURCES
 SRCS_MAIN_DIR	=	srcs/
-SRCS_FILES		=	$(STRING) $(MEMORY) $(LIST) $(BUFFER) $(FT_PRINTF) $(GNL)
+SRCS_FILES		=	$(STRING) $(IO) $(CONV) $(MEMORY) $(LIST) $(BUFFER)			\
+					$(FT_PRINTF) $(GNL)
 SRCS			=	$(addprefix $(SRCS_MAIN_DIR), $(SRCS_FILES))
 
 # OBJECTS
