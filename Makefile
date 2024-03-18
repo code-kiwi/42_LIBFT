@@ -6,7 +6,7 @@
 #    By: mhotting <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/06 14:28:05 by mhotting          #+#    #+#              #
-#    Updated: 2024/03/18 12:25:30 by mhotting         ###   ########.fr        #
+#    Updated: 2024/03/18 14:03:58 by mhotting         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,7 +42,8 @@ IO				=	$(addprefix $(IO_DIR), $(IO_FILES))
 CONV_DIR		=	conversion/
 CONV_FILES		=	ft_atoi.c ft_itoa.c ft_ctoa.c ft_ltoa.c ft_ltoa_base.c		\
 					ft_ultoa_base.c ft_is_valid_base.c ft_get_long_len.c		\
-					ft_get_ulong_len.c ft_atol.c ft_atoul.c
+					ft_get_ulong_len.c ft_atol.c ft_atoul.c ft_atol_base.c		\
+					ft_atoi_base.c
 CONV			=	$(addprefix $(CONV_DIR), $(CONV_FILES))
 
 

@@ -1,42 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_valid_base.c                                 :+:      :+:    :+:   */
+/*   ft_atol_base.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mhotting <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/11 17:17:16 by mhotting          #+#    #+#             */
-/*   Updated: 2024/03/18 13:23:26 by mhotting         ###   ########.fr       */
+/*   Created: 2024/03/18 13:14:10 by mhotting          #+#    #+#             */
+/*   Updated: 2024/03/18 13:59:19 by mhotting         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-bool	ft_is_valid_base(char *base)
+long	ft_atol_base(char *nbr, char *base)
 {
-	size_t	i;
-	size_t	j;
-	size_t	base_len;
+	unsigned long	res;
+	long			sign;
+	size_t			base_len;
 
+	if (nbr == NULL || base == NULL || !ft_is_valid_base(base))
+		return (0);
+	res = 0;
+	sign = 1;
 	base_len = ft_strlen(base);
-	if (base_len < 2)
-		return (false);
-	i = 0;
-	while (i < base_len)
+	while (ft_isspace(*nbr))
+		nbr++;
+	if (*nbr == '+' || *nbr == '-')
 	{
-		if (
-			!ft_isprint(base[i]) || ft_isspace(base[i])
-			|| base[i] == '+' || base[i] == '-'
-		)
-			return (false);
-		j = i + 1;
-		while (j < base_len)
-		{
-			if (base[i] == base[j])
-				return (false);
-			j++;
-		}
-		i++;
+		if (*nbr == '-')
+			sign *= -1;
+		nbr++;
 	}
-	return (true);
+	while (*nbr && ft_strchr(base, *nbr) != NULL)
+	{
+		res *= base_len;
+		res += ft_strchr(base, *nbr) - base;
+		nbr++;
+	}
+	return (sign * res);
 }

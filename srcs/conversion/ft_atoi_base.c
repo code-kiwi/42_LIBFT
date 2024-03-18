@@ -1,42 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_valid_base.c                                 :+:      :+:    :+:   */
+/*   ft_atoi_base.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mhotting <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/11 17:17:16 by mhotting          #+#    #+#             */
-/*   Updated: 2024/03/18 13:23:26 by mhotting         ###   ########.fr       */
+/*   Created: 2024/03/18 14:00:49 by mhotting          #+#    #+#             */
+/*   Updated: 2024/03/18 14:01:34 by mhotting         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-bool	ft_is_valid_base(char *base)
+int	ft_atoi_base(char *nbr, char *base)
 {
-	size_t	i;
-	size_t	j;
-	size_t	base_len;
-
-	base_len = ft_strlen(base);
-	if (base_len < 2)
-		return (false);
-	i = 0;
-	while (i < base_len)
-	{
-		if (
-			!ft_isprint(base[i]) || ft_isspace(base[i])
-			|| base[i] == '+' || base[i] == '-'
-		)
-			return (false);
-		j = i + 1;
-		while (j < base_len)
-		{
-			if (base[i] == base[j])
-				return (false);
-			j++;
-		}
-		i++;
-	}
-	return (true);
+	return ((int)ft_atol_base(nbr, base));
 }

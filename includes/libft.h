@@ -6,7 +6,7 @@
 /*   By: mhotting <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 16:29:33 by mhotting          #+#    #+#             */
-/*   Updated: 2024/03/18 12:27:05 by mhotting         ###   ########.fr       */
+/*   Updated: 2024/03/18 14:01:46 by mhotting         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,8 @@ char			*ft_ultoa_base(unsigned long nb, char *base);
 bool			ft_is_valid_base(char *base);
 size_t			ft_get_long_len(long num, size_t base_len);
 size_t			ft_get_ulong_len(unsigned long nb, size_t base_len);
+long			ft_atol_base(char *nbr, char *base);
+int				ft_atoi_base(char *nbr, char *base);
 
 // Input/Output functions
 ssize_t			ft_putchar_fd(char c, int fd);
