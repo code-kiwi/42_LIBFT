@@ -6,7 +6,7 @@
 /*   By: mhotting <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 11:13:16 by mhotting          #+#    #+#             */
-/*   Updated: 2024/04/03 11:45:50 by mhotting         ###   ########.fr       */
+/*   Updated: 2024/04/03 11:55:21 by mhotting         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ void	ft_lst_remove_if(
 			prev->next = node->next;
 			ft_lstdelone(node, del);
 			node = prev->next;
+			continue ;
 		}
+		node = node->next;
 	}
 }
