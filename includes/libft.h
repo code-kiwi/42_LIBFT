@@ -6,7 +6,7 @@
 /*   By: mhotting <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 16:29:33 by mhotting          #+#    #+#             */
-/*   Updated: 2024/04/03 10:29:32 by mhotting         ###   ########.fr       */
+/*   Updated: 2024/04/03 11:41:03 by mhotting         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,5 +106,7 @@ size_t			ft_lstsize(t_list *lst);
 void			ft_lstreverse(t_list **lst);
 void			ft_lstprint(t_list *lst, void (*print)(void *));
 t_list			*ft_listfind(t_list *lst, void *data_ref, int (*cmp)());
+void			ft_list_remove_if(t_list **lst, void *data_ref, \
+				int (*cmp)(), void (*del)(void *));
 
 #endif

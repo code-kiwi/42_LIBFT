@@ -6,7 +6,7 @@
 #    By: mhotting <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/06 14:28:05 by mhotting          #+#    #+#              #
-#    Updated: 2024/04/03 10:17:32 by mhotting         ###   ########.fr        #
+#    Updated: 2024/04/03 11:42:10 by mhotting         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,7 +58,7 @@ LIST_DIR		=	list/
 LIST_FILES		=	ft_lstadd_back.c ft_lstadd_front.c ft_lstclear.c			\
 					ft_lstdelone.c ft_lstiter.c ft_lstlast.c ft_lstmap.c		\
 					ft_lstnew.c ft_lstsize.c ft_lstreverse.c ft_lstprint.c		\
-					ft_lstfind.c
+					ft_lstfind.c ft_lstremoveif.c
 LIST			=	$(addprefix $(LIST_DIR), $(LIST_FILES))
 
 # BUFFER
